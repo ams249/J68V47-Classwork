@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>MathQuiz.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MathQuiz.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Random</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">MathQuiz </span><span class="s2">{</span>
+
+    <span class="s0">static </span><span class="s1">String choice</span><span class="s2">;</span>
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+
+        <span class="s1">Scanner input </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s1">Random rand </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Random</span><span class="s2">();</span>
+
+        <span class="s3">// Ask for user's name and class</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;What is your name? &quot;</span><span class="s2">);</span>
+        <span class="s1">String name </span><span class="s2">= </span><span class="s1">input</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;What class are you in? &quot;</span><span class="s2">);</span>
+        <span class="s1">String className </span><span class="s2">= </span><span class="s1">input</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Here are 10 questions:&quot;</span><span class="s2">);</span>
+        <span class="s0">int </span><span class="s1">score </span><span class="s2">= </span><span class="s5">0</span><span class="s2">;</span>
+        <span class="s0">for</span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s5">1</span><span class="s2">; </span><span class="s1">i</span><span class="s2">&lt;=</span><span class="s5">10</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+
+            <span class="s3">// Generate random numbers</span>
+            <span class="s0">int </span><span class="s1">num1 </span><span class="s2">= </span><span class="s1">rand</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">(</span><span class="s5">10</span><span class="s2">);</span>
+            <span class="s0">int </span><span class="s1">num2 </span><span class="s2">= </span><span class="s1">rand</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">(</span><span class="s5">10</span><span class="s2">);</span>
+
+            <span class="s3">// Display question</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Question &quot; </span><span class="s2">+ </span><span class="s1">i </span><span class="s2">+ </span><span class="s4">&quot;: &quot; </span><span class="s2">+ </span><span class="s1">num1 </span><span class="s2">+ </span><span class="s4">&quot; + &quot; </span><span class="s2">+ </span><span class="s1">num2 </span><span class="s2">+ </span><span class="s4">&quot; = &quot;</span><span class="s2">);</span>
+
+            <span class="s3">// Read answer from user</span>
+            <span class="s0">int </span><span class="s1">answer </span><span class="s2">= </span><span class="s1">input</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+
+            <span class="s3">// Grade answer and update score</span>
+            <span class="s0">if</span><span class="s2">(</span><span class="s1">answer </span><span class="s2">== </span><span class="s1">num1 </span><span class="s2">+ </span><span class="s1">num2</span><span class="s2">) {</span>
+                <span class="s1">score</span><span class="s2">++;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Display final score</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">Your final score is: &quot; </span><span class="s2">+ </span><span class="s1">score </span><span class="s2">+ </span><span class="s4">&quot; out of 10&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s3">//Include a way to display the leaderboard here, and ask if someone else wants to do it//</span>
+    <span class="s3">//If yes, do the same code again//</span>
+    <span class="s3">//If no, Stop the program//</span>
+    <span class="s3">//Find a way to continue the leaderboard points each time the code is rerun//</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
